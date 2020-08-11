@@ -36,7 +36,18 @@ class CuentasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cuentas = new Cuentas();
+        $cuentas->usuario_id = 0;
+        $cuentas->ruc = $request->ruc;
+        $cuentas->canal_llegada_id = $request->canal_llegada_id;
+        $cuentas->nombre_comercial = $request->nombre_comercial;
+        $cuentas->razon_social = $request->razon_social;
+        $cuentas->domicilio_fiscal = $request->domicilio_fiscal;
+        $cuentas->ubigeo_dpr = $request->ubigeo_dpr;
+        $cuentas->notas = $request->notas;
+        $cuentas->info_busqueda = $request->ruc+' '+ $request->razon_social;
+        $cuentas->ubigeo = '';
+        $cuentas->activo = 'ACTIVO';
     }
 
     /**

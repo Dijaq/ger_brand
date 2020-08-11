@@ -40,7 +40,7 @@ class CotizacionController extends Controller
         try{      
             $cotizacion = new Cotizacion();
             $cotizacion->cuenta_id = $request->cuenta_id;
-            $cotizacion->paquete_servicio_servicio_id = $request->paquete_servicio_servicio_id;
+            $cotizacion->paquete_servicio_id = $request->paquete_servicio_id;
             $cotizacion->comentario = $request->comentario;
             $cotizacion->save();
 
