@@ -25,3 +25,5 @@ Route::get('/blog', ['as' => 'homes', 'uses' => 'WebController@blog']);
 Route::get('/blog/articulo', ['as' => 'homes', 'uses' => 'WebController@blog_articulo']);
 Route::get('/soporte', ['as' => 'homes', 'uses' => 'WebController@soporte']);
 Route::get('/soporte/nombre', ['as' => 'homes', 'uses' => 'WebController@soporte_articulo']);
+
+Route::get('/generar', ['as' => 'inicio', 'uses' => 'WebController@generar_pdf']);

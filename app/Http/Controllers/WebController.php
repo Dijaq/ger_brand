@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
 
 class WebController extends Controller
 {
@@ -52,6 +53,15 @@ class WebController extends Controller
     public function soporte_articulo()
     {
         return view('web.soporte-articulo');
+    }
+
+    public function generar_pdf()
+    {
+        PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        $pdf = PDF::loadView('web.documento');
+        $pdf->setPaper("A4");
+        //return view('web.pdf');
+        return $pdf->download('archivo.pdf');
     }
 
 }
